@@ -1,0 +1,13 @@
+.env
+__pychache__
+/__pychache__
+*/__pychache__
+*/__pychache__/*
+env
+env/*
+/sys-design-env
+data
+chroma
+/chunks.txt
+/modified_chunks.txt
+/chroma_data.txt

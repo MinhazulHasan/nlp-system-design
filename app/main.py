@@ -1,9 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.config.settings import config  # Updated import
 
 app = FastAPI()
 
-from app.api.validator import validator
+from app.api.extraction import extraction_router
 
 
 app.add_middleware(
@@ -14,4 +15,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(validator, prefix="/api/validator", tags=["validator"])
+app.include_router(extraction_router, prefix="/api/extraction", tags=["extraction"])

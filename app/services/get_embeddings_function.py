@@ -1,9 +1,7 @@
 from langchain_openai import OpenAIEmbeddings
-from dotenv import load_dotenv
-load_dotenv()
-import os
+from app.config.settings import config
 
 
 def get_embeddings_function():
-    embedding = OpenAIEmbeddings(openai_api_key=os.environ.get('OPENAI_API_KEY'))
+    embedding = OpenAIEmbeddings(openai_api_key=config.OPENAI_API_KEY)
     return embedding

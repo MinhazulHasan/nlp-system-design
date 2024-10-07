@@ -46,17 +46,18 @@ def download_pdf(url):
 
 def create_folder_structure(company: str):
     base_path = Path("collected_documents")
-    folders = [""]
-    for folder in folders:
-        folder_path = base_path / folder / company
-        folder_path.mkdir(parents=True, exist_ok=True)
+    folder_path = base_path / company / "valid"
+    folder_path.mkdir(parents=True, exist_ok=True)
+    folder_path = base_path / company / "invalid"
+    folder_path.mkdir(parents=True, exist_ok=True)
 
 
-def save_file(content, filename, company):
+def save_file(content, filename, company, is_valid):
     create_folder_structure(company)
+    validation_title = "valid" if is_valid else "invalid"
     #Save the file to data folder
-    filename = f"collected_documents/{company}/{filename}.pdf"
-    
+    filename = f"collected_documents/{company}/{validation_title}/{filename}"
+
     # Check if the file already exists
     if os.path.exists(filename):
         print(f"File {filename} already exists. Skipping download.")

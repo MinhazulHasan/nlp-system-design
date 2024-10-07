@@ -11,7 +11,7 @@ async def fetch_pdf_links(company_name: str):
         'cx': config.GOOGLE_SEARCH_ID,
         'q': query,
         'fileType': 'pdf',
-        'num': 3
+        'num': 10
     }
     async with aiohttp.ClientSession() as session:
         async with session.get(url, params=params) as response:

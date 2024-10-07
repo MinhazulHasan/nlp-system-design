@@ -1,7 +1,12 @@
 from datetime import datetime, timedelta
 import requests
-import os
 from pathlib import Path
+from typing import Union
+from app.utilities.logger import report_logger
+
+# Constants for folder names
+VALID_FOLDER = "valid"
+INVALID_FOLDER = "invalid"
 
 
 def generate_query(company):
@@ -44,24 +49,28 @@ def download_pdf(url):
         return None
     
 
-def create_folder_structure(company: str):
-    base_path = Path("collected_documents")
-    folder_path = base_path / company / "valid"
-    folder_path.mkdir(parents=True, exist_ok=True)
-    folder_path = base_path / company / "invalid"
-    folder_path.mkdir(parents=True, exist_ok=True)
+def create_folder_structure(company: str) -> None:
+    base_path = Path("collected_documents") / company
+    for folder in [VALID_FOLDER, INVALID_FOLDER]:
+        folder_path = base_path / folder
+        folder_path.mkdir(parents=True, exist_ok=True)
 
 
-def save_file(content, filename, company, is_valid):
+def save_file(content: Union[bytes, str], filename: str, company: str, is_valid: bool) -> None:
     create_folder_structure(company)
-    validation_title = "valid" if is_valid else "invalid"
-    #Save the file to data folder
-    filename = f"collected_documents/{company}/{validation_title}/{filename}"
+    validation_status = VALID_FOLDER if is_valid else INVALID_FOLDER
+    file_path = Path("collected_documents") / company / validation_status / filename
 
     # Check if the file already exists
-    if os.path.exists(filename):
-        print(f"File {filename} already exists. Skipping download.")
+    if file_path.exists():
+        report_logger.info(f"File {file_path} already exists. Skipping download.")
         return
+
+    # Save file to the determined path
+    try:
+        with open(file_path, 'wb' if isinstance(content, bytes) else 'w') as f:
+            f.write(content)
+        report_logger.info(f"Document {file_path} is {validation_status} and saved to the {validation_status} folder.")
+    except Exception as e:
+        report_logger.error(f"Failed to save document {filename}. Error: {e}")
     
-    with open(filename, 'wb') as f:
-        f.write(content)

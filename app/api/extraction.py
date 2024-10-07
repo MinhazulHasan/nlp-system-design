@@ -34,11 +34,9 @@ async def fetch_doc_and_validate(company_name: str):
                 
                 company_name, pdf_name, pdf_link, pdf_date = info
                 if response_text.lower() == "valid":
-                    print("Document is valid")
                     save_file(content, pdf_name, company_name, True)
                     report_logger.info(f"Document {pdf_name} is valid and saved to the valid folder")
                 else:
-                    print("Document is invalid")
                     save_file(content, pdf_name, company_name, False)
                     report_logger.info(f"Document {pdf_name} is invalid and saved to the invalid folder")
     

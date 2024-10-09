@@ -9,8 +9,8 @@ VALID_FOLDER = "valid"
 INVALID_FOLDER = "invalid"
 
 
-def generate_query(company):
-    return f"ESG documents of \"{company}\""
+def generate_query(company: str) -> str:
+    return f'"{company}" "company report"'
 
 
 def sanitize_filename(filename):
@@ -31,7 +31,7 @@ def preprocess_datetime(date_str):
             return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     except Exception as e:
-        print(f"Error : {e}")
+        print(f"Error for date-time conversion: {e}\nOriginal date: {date_str}")
         return None
 
 

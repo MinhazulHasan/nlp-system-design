@@ -38,7 +38,7 @@ async def document_check_and_DB_insertion(info: Tuple[str, str, str, Optional[st
 async def fetch_doc_and_validate(company_name: str):
     try:
         pdf_info = await fetch_pdf_links(company_name, 2)
-        # report_logger.info(f"PDF links fetched for {company_name} are:\n{pdf_info}")
+        report_logger.info(f"PDF links fetched for {company_name} are:\n{pdf_info}")
 
         for info in pdf_info:
             company_name, pdf_name, pdf_link, pdf_date = info
@@ -47,11 +47,13 @@ async def fetch_doc_and_validate(company_name: str):
                 file_hash, content = result
                 embedding_response = await embed_pdf(info, content, file_hash)
                 if embedding_response:
-                    query = f"{company_name}"
-                    similar_docs = await get_similar_documents(file_hash, query)
+                    query = f"Is the Document valid for the company: '{company_name}'"
+                    context = await get_similar_documents(file_hash, query)
+
 
                     prompt_template = ChatPromptTemplate.from_template(get_prompt())
-                    prompt = prompt_template.format(question=query, document_name=pdf_name, source_link={pdf_link}, context=similar_docs)
+                    prompt = prompt_template.format(query=query, pdf_name=pdf_name, pdf_link={pdf_link}, context=context)
+                    
                     response_text = await openai_response(prompt)
                     report_logger.info(f"For the document {pdf_name}\nThe response from OpenAI is {response_text}")
 

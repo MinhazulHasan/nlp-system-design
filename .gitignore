@@ -13,3 +13,5 @@ chroma
 /chroma_data.txt
 /logs
 /collated_documents
+/collated_documents/*
+/collated_documents/*/*

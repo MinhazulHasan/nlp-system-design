@@ -1,10 +1,11 @@
 from fastapi import APIRouter, HTTPException
 from app.services.search_service import fetch_pdf_links
+from app.services.search_service_v2 import fetch_pdf_links_v2
 from app.services.embedding_service import get_similar_documents
 from langchain.prompts import ChatPromptTemplate
 from app.services.openai_service import openai_response
-from app.core.prompt import get_prompt
-from app.utilities.helper import save_file
+from app.core.prompt import get_prompt, get_prompt_for_snippet
+from app.utilities.helper import save_file, save_file_v2
 from app.utilities.logger import report_logger
 from app.services.pdf_service import get_pdf_content, get_pdf_hash, embed_pdf
 from app.database.operations.document_storage import check_document_exists, insert_document
@@ -50,7 +51,6 @@ async def fetch_doc_and_validate(company_name: str):
                     query = f"Is the Document valid for the company: '{company_name}'"
                     context = await get_similar_documents(file_hash, query)
 
-
                     prompt_template = ChatPromptTemplate.from_template(get_prompt())
                     prompt = prompt_template.format(query=query, pdf_name=pdf_name, pdf_link={pdf_link}, context=context)
                     
@@ -65,6 +65,30 @@ async def fetch_doc_and_validate(company_name: str):
                         report_logger.info(f"Document {pdf_name} is invalid and saved to the invalid folder")
     
         return { "message": "Documents fetched and processed successfully" }
+    
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+
+
+@extraction_router.post('/validate_using_snippet', status_code=201)
+async def validate_using_snippet(company_name: str):
+    try:
+        pdf_info = await fetch_pdf_links_v2(company_name, 2)
+        for info in pdf_info:
+            company_name, pdf_name, pdf_link, pdf_date, snippet = info
+            query = f"Is the Document valid for the company: '{company_name}'"
+            prompt_template = ChatPromptTemplate.from_template(get_prompt_for_snippet())
+            prompt = prompt_template.format(query=query, pdf_name=pdf_name, pdf_link={pdf_link}, snippet=snippet)
+            response_text = await openai_response(prompt)
+            if response_text.upper() == "YES":
+                await save_file_v2(company_name, pdf_name, pdf_link, True)
+                report_logger.info(f"Document {pdf_name} is valid and saved to the valid folder")
+            else:
+                await save_file_v2(company_name, pdf_name, pdf_link, False)
+                report_logger.info(f"Document {pdf_name} is invalid and saved to the invalid folder")
+        return { "message": pdf_info }
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

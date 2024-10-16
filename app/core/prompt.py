@@ -44,3 +44,25 @@ Query: {query}
 Note: High similarity scores alone do not guarantee relevance. Consider content and context carefully. YOUR RESPONSE BOUND TO EITHER YES OR NO. OTHER ANY RESPONSE WILL BE CONSIDERED AS INVALID.
 """
     return PROMPT_TEMPLATE
+
+
+def get_prompt_for_specific_field():
+    PROMPT_TEMPLATE = """
+You are an expert AI assistant tasked with extracting specific information about a company from the provided context. I will give you a query that specifies a data field, its description, expected values, and other relevant information.
+
+Instructions:
+1. Analyze the provided context carefully to locate the relevant information for the specified company.
+2. Respond with only the required information as specified in the query.
+3. If the information is not available, try to find the information from internet sources or provide a suitable response.
+4. Do not provide any additional explanations or context unless explicitly asked.
+
+Context:
+{context}
+______
+
+Query: {query}
+Description: {query_description}
+Expected Values: {expected_values} [If applicable]
+
+"""
+    return PROMPT_TEMPLATE

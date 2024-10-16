@@ -1,0 +1,200 @@
+[
+    {
+        "Data Field": "Financial Year",
+        "Description": "fiscal year of the most recent reported or estimated/GHG values. If avaiallable, it should be reported per each data point. As levels of disclosure may be be different",
+        "Expected values": "numeric/year",
+        "Additional comments": "Marking most of of this sections as M, as it is not derived data, we expect to have this publicly avaialble and constitute mandatory metrics under the SFDR. Values like 'Not disclosed' are to some point aceptable. As levels of disclosure are still low"
+    },
+    {
+        "Data Field": "Most Recent GHG S1",
+        "Description": "reported and most recent GHG emissions for scope 1 for the company",
+        "Expected values": "tCO2e",
+        "MSCI KeyWords": "CARBON_EMISSIONS_SCOPE_1"
+    },
+    {
+        "Data Field": "Most Recent GHG S2",
+        "Description": "reported and most recent GHG emissions for scope 2 for the company",
+        "Expected values": "tCO2e",
+        "MSCI KeyWords": "CARBON_EMISSIONS_SCOPE_2"
+    },
+    {
+        "Data Field": "Most Recent GHG S3",
+        "Description": "reported or estimated and most recent GHG emissions for scope 3 for the company. If available a breakdown for any of the 15 subcategories",
+        "Expected values": "tCO2e",
+        "MSCI KeyWords": "CARBON_EMISSIONS_SCOPE_3"
+    },
+    {
+        "Data Field": "GHG emissions flag",
+        "Description": "Flag indicating if the GHG emission value is reported or estimated, one per scope and quality score assesments of the GHG emissions following PCAF"
+    },
+    {
+        "Data Field": "Revenue",
+        "Description": "Revenue for the most recent fiscal year avaialble (indicate year). Explicit indication of currency",
+        "Expected values": "Millions of currency",
+        "MSCI KeyWords": "SALES_EUR or SALES_USD"
+    },
+    {
+        "Data Field": "Enterprise Value including Cash",
+        "Description": "EVIC for the most recent fiscal year avaialble (indicate year). Explicit indication of currency",
+        "Expected values": "Millions of currency",
+        "MSCI KeyWords": "EVIC_EUR or EVIC_USD"
+    },
+    {
+        "Data Field": "Enterprise Value",
+        "Description": "EV for the most recent fiscal year avaialble (indicate year). Explicit indication of currency",
+        "Expected values": "Millions of currency"
+    },
+    {
+        "Data Field": "MarketCap",
+        "Description": "Market cap for the most recent fiscal year avaialble (indicate year). Explicit indication of currency",
+        "Expected values": "Millions of currency",
+        "MSCI KeyWords": "MarketCap_USD or MarketCap_EUR "
+    },
+    {
+        "Data Field": "Sector Classification",
+        "Description": "NACE or GICS classification at the most granular level ",
+        "Expected values": "Code and sector description"
+    },
+    {
+        "Data Field": "Target Description",
+        "Description": "Full description of the emission reduction targets. Should containt timeframe of the targets (years), ambition, scopes, target type and base year emissions",
+        "Expected values": "Reduce 46% of  scope 1 and 2 emissions by year 2030 compared to 2019 baseline year. 10% renewable gas across its distribution networks by 2030 and achieve full  renewable gas conversion",
+        "MSCI KeyWords": "CBN_TARGET_DESC"
+    },
+    {
+        "Data Field": "Target NetZero",
+        "Description": "Indicates whether the target aims for \ufffdnet zero\ufffd emissions, as defined by the company.",
+        "Expected values": "Yes/No; True/False etc",
+        "MSCI KeyWords": "TARGET_CARBON_EVIDENCE_NET_ZERO"
+    },
+    {
+        "Data Field": "SBTi Target Approved",
+        "Description": "\ufffdthe company has one or more active carbon emissions reduction target/s approved by the Science Based Targets initiative (SBTi). \ufffd",
+        "Expected values": "Yes/No; True/False etc",
+        "MSCI KeyWords": "HAS_SBTI_APPROVED_TARGET"
+    },
+    {
+        "Data Field": "SBTi Target commitment",
+        "Description": "\ufffdthe company has committed to work on a science-based emission reduction target aligned with SBTi\ufffds criteria",
+        "Expected values": "Yes/No; True/False etc",
+        "MSCI KeyWords": "HAS_COMMITTED_TO_SBTI_TARGET"
+    },
+    {
+        "Data Field": "Target type ",
+        "Description": "Absolute or intensity based GHG emission reduction target. ",
+        "Expected values": "Absolute: absolute emissions, intensity: GHG intensity of 7.37 normalized to revenue , other",
+        "MSCI KeyWords": "TARGET_CARBON_TYPE"
+    },
+    {
+        "Data Field": "Intensity metric",
+        "Description": "The metric on which the intensity-based GHG emission reduction target is based. All intensity metrics must be mapped to the 8 categories.",
+        "Expected values": "Revenue (tCO2e/revenue), Product, Cement, Oil, Steel, Aluminum, Power Generation, or Other",
+        "MSCI KeyWords": "TARGET_CARBON_UNITS"
+    },
+    {
+        "Data Field": "Scope",
+        "Description": "Scope combinations covered by the targets. ",
+        "Expected values": "S1,S2,S1+S2,S1+S2+S3,S3",
+        "MSCI KeyWords": "TARGET_CARBON_SCOPE_123_CATEGORY"
+    },
+    {
+        "Data Field": "Coverage_S1 ",
+        "Description": "The part of emissions covered in scope 1 for the target. ",
+        "Expected values": "Number between 0 and 1 or 0 to 100 --> 70%== 0.7.",
+        "MSCI KeyWords": "TARGET_CARBON_COVERAGE_PCT"
+    },
+    {
+        "Data Field": "Coverage_S2 ",
+        "Description": "The part of emissions covered in scope 2 for the target.",
+        "Expected values": "Number between 0 and 1 or 0 to 100 --> 70%== 0.7.",
+        "MSCI KeyWords": "TARGET_CARBON_COVERAGE_PCT"
+    },
+    {
+        "Data Field": "Coverage_S3",
+        "Description": "The part of emissions covered in scope 3 for the target. This should be the coverage compared to the whole scope 3 emissions.",
+        "Expected values": "Number between 0 and 1 or 0 to 100 --> 70%== 0.7.",
+        "MSCI KeyWords": "TARGET_CARBON_COVERAGE_PCT"
+    },
+    {
+        "Data Field": "Reduction ambition ",
+        "Description": "The emission reduction that is set as an ambition in the target. \ufffd",
+        "Expected values": "Number between 0 and 1 or 0 to 100 --> 70%== 0.7.",
+        "MSCI KeyWords": "TARGET_CARBON_CHANGE_PCT"
+    },
+    {
+        "Data Field": "Base year",
+        "Description": "Base year of the target. ",
+        "Expected values": "numeric/year",
+        "MSCI KeyWords": "CBN_TARGET_BASE_YEAR"
+    },
+    {
+        "Data Field": "End year ",
+        "Description": "End year of the target. ",
+        "Expected values": "numeric/year",
+        "MSCI KeyWords": "CBN_TARGET_YEAR"
+    },
+    {
+        "Data Field": "Start year",
+        "Description": "Year the target was announced. \ufffdIf not specified, it will be assumed the start year is equal to the base year.",
+        "Expected values": "numeric/year"
+    },
+    {
+        "Data Field": "Base year GHG S1",
+        "Description": "Total reported GHG emissions for scope 1 for the company at the base year of the target.\ufffd",
+        "Expected values": "tCO2e",
+        "MSCI KeyWords": "CBN_TARGET_BASE_YEAR_VAL"
+    },
+    {
+        "Data Field": "Base year GHG S2",
+        "Description": "Total reported GHG emissions for scope 2 for the company at the base year of the target.\ufffd\ufffd",
+        "Expected values": "tCO2e",
+        "MSCI KeyWords": "CBN_TARGET_BASE_YEAR_VAL"
+    },
+    {
+        "Data Field": "Base year GHG S3",
+        "Description": "Total reported GHG emissions for scope 3 for the company at the base year of the target.",
+        "Expected values": "tCO2e",
+        "MSCI KeyWords": "CBN_TARGET_BASE_YEAR_VAL"
+    },
+    {
+        "Data Field": "Achieved reduction ",
+        "Description": "Part of the reduction ambition of the target that is already achieved by the company. ",
+        "Expected values": "Number between 0 and  < 1 or 0  to  < 100 --> 70%== 0.7.",
+        "MSCI KeyWords": "TARGET_CARBON_PROGRESS_PCT"
+    },
+    {
+        "Data Field": "Fossils fuel exposure",
+        "Description": "whether the company is involved in any fossil fuels related activities: extraction, processing, storage and transportation of petroleum products, natural gas, and thermal and metallurgical coal.",
+        "Expected values": "Yes/No/Not disclosed",
+        "MSCI KeyWords": "ACTIVE_FF_SECTOR_EXPOSURE"
+    },
+    {
+        "Data Field": "Total Energy Consumption",
+        "Description": "Share of total energy consumption of investee companies from all energy sources ",
+        "Expected values": "GWh",
+        "MSCI KeyWords": "TOTL_ERGY_CONSUMP_GWH"
+    },
+    {
+        "Data Field": "Total Renewable Consumption",
+        "Description": "Share of non-renewable energy consumption of investee companies from non-renewable energy sources ",
+        "Expected values": "GWh",
+        "MSCI KeyWords": "TOTL_ERGY_CONSUMP_RENEW_GWH"
+    },
+    {
+        "Data Field": "Renewable Energy Production",
+        "Description": "Share of non-renewable energy production  of investee companies from non-renewable energy sources ",
+        "Expected values": "GWh"
+    },
+    {
+        "Data Field": "Negative Activities Biodiversity Areas",
+        "Description": "whether Company reports having operations in or near to biodiversity sensitive areas and has been implicated in controversies with severe or very severe adverse impact on the environment",
+        "Expected values": "Yes/No/Not disclosed",
+        "MSCI KeyWords": "OPS_PROT_BIODIV_CONTROVS"
+    },
+    {
+        "Data Field": "Emissions to Water",
+        "Description": "Tonnes of emissions to water : Total tons of pollutants released to surface waters as a result of companies' operations.",
+        "Expected values": "tonnes",
+        "MSCI KeyWords": "WATER_EM_EFF_METRIC_TONS"
+    }
+]

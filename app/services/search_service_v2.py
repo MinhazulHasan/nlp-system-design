@@ -46,7 +46,6 @@ def parse_response(data: List[Dict[str, Any]], company_name: str) -> List[Tuple[
     links = []
     try:
         for item in data:
-            print(f"ITEM = {item.get('snippet', 'No snippet available')}\n\n")
             title = item.get('title', 'Unnamed Document')
             link = item.get('link', '')
             snippet = item.get('snippet', 'No snippet available')

@@ -13,7 +13,7 @@ INVALID_FOLDER = "invalid"
 
 
 def generate_query(company: str) -> str:
-    return f'"{company}" "company report"'
+    return f'("ESG report" OR "Annual report") for "{company}"'
 
 
 

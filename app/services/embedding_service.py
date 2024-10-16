@@ -15,9 +15,9 @@ def split_documents(documents: list[Document]):
     return text_splitter.split_documents(documents)
 
 
-async def add_to_chroma(chunks: list[Document], file_name: str, file_hash: str):
+async def add_to_chroma(chunks: list[Document], file_name: str, file_hash: str, company_name: str = ""):
     db = Chroma(persist_directory=config.CHROMA_PATH, embedding_function=get_embeddings_function())
-    chunks_with_hash, new_chunk_ids = embed_hash_in_metadata(chunks, file_name, file_hash)
+    chunks_with_hash, new_chunk_ids = embed_hash_in_metadata(chunks, file_name, file_hash, company_name)
     existing_docs = db.get(where={"file_hash": file_hash})
     if existing_docs["ids"]:
         return
@@ -25,10 +25,12 @@ async def add_to_chroma(chunks: list[Document], file_name: str, file_hash: str):
     db.persist()
 
 
-def embed_hash_in_metadata(chunks: list[Document], file_name: str, file_hash: str) -> tuple[list[Document], list[str]]:
+def embed_hash_in_metadata(chunks: list[Document], file_name: str, file_hash: str, company_name: str) -> tuple[list[Document], list[str]]:
     new_chunk_ids = []
+    company_name = company_name.lower()
     for i, chunk in enumerate(chunks):
         chunk.metadata["file_hash"] = file_hash
+        chunk.metadata["company_name"] = company_name
         chunk_id = f"{file_name}_{i+1}"
         new_chunk_ids.append(chunk_id)
     return chunks, new_chunk_ids
@@ -44,3 +46,11 @@ async def get_similar_documents(file_hash: str, query: str):
         }
         for result in similar_documents
     ]
+
+
+async def get_similar_documents_v2(company_name: str, query: str):
+    company_name = company_name.lower()
+    db = Chroma(persist_directory=config.CHROMA_PATH, embedding_function=get_embeddings_function())
+    similar_documents = db.similarity_search_with_score(query, k=5, filter={"company_name": company_name})
+    context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in similar_documents])
+    return context_text

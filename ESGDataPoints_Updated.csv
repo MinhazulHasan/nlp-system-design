@@ -1,0 +1,62 @@
+Data Field,Description,Expected values,Additional comments,MoSCoW,MSCI KeyWords
+Financial Year,"fiscal year of the most recent reported or estimated/GHG values. If avaiallable, it should be reported per each data point. As levels of disclosure may be be different",numeric/year,"Marking most of of this sections as M, as it is not derived data, we expect to have this publicly avaialble and constitute mandatory metrics under the SFDR. Values like 'Not disclosed' are to some point aceptable. As levels of disclosure are still low",M,
+Most Recent GHG S1,reported and most recent GHG emissions for scope 1 for the company,tCO2e,,M,CARBON_EMISSIONS_SCOPE_1
+Most Recent GHG S2,reported and most recent GHG emissions for scope 2 for the company,tCO2e,,M,CARBON_EMISSIONS_SCOPE_2
+Most Recent GHG S3,reported or estimated and most recent GHG emissions for scope 3 for the company. If available a breakdown for any of the 15 subcategories,tCO2e,,M,CARBON_EMISSIONS_SCOPE_3
+GHG emissions flag,"Flag indicating if the GHG emission value is reported or estimated, one per scope and quality score assesments of the GHG emissions following PCAF",,,M,
+Revenue,Revenue for the most recent fiscal year avaialble (indicate year). Explicit indication of currency,Millions of currency,,M,SALES_EUR or SALES_USD
+Enterprise Value including Cash,EVIC for the most recent fiscal year avaialble (indicate year). Explicit indication of currency,Millions of currency,,M,EVIC_EUR or EVIC_USD
+Enterprise Value,EV for the most recent fiscal year avaialble (indicate year). Explicit indication of currency,Millions of currency,,M,
+MarketCap,Market cap for the most recent fiscal year avaialble (indicate year). Explicit indication of currency,Millions of currency,,M,"MarketCap_USD or MarketCap_EUR "
+Sector Classification,"NACE or GICS classification at the most granular level ",Code and sector description,,M,
+Target Description,"Full description of the emission reduction targets. Should containt timeframe of the targets (years), ambition, scopes, target type and base year emissions",Reduce 46% of  scope 1 and 2 emissions by year 2030 compared to 2019 baseline year. 10% renewable gas across its distribution networks by 2030 and achieve full  renewable gas conversion,,M,CBN_TARGET_DESC
+Target NetZero,"Indicates whether the target aims for �net zero� emissions, as defined by the company.",Yes/No; True/False etc,,M,TARGET_CARBON_EVIDENCE_NET_ZERO
+SBTi Target Approved,�the company has one or more active carbon emissions reduction target/s approved by the Science Based Targets initiative (SBTi). �,Yes/No; True/False etc,,M,HAS_SBTI_APPROVED_TARGET
+SBTi Target commitment,�the company has committed to work on a science-based emission reduction target aligned with SBTi�s criteria,Yes/No; True/False etc,,M,HAS_COMMITTED_TO_SBTI_TARGET
+"Target type ","Absolute or intensity based GHG emission reduction target. ","Absolute: absolute emissions, intensity: GHG intensity of 7.37 normalized to revenue , other",,M,TARGET_CARBON_TYPE
+Intensity metric,The metric on which the intensity-based GHG emission reduction target is based. All intensity metrics must be mapped to the 8 categories.,"Revenue (tCO2e/revenue), Product, Cement, Oil, Steel, Aluminum, Power Generation, or Other",,M,TARGET_CARBON_UNITS
+Scope,"Scope combinations covered by the targets. ","S1,S2,S1+S2,S1+S2+S3,S3",,M,TARGET_CARBON_SCOPE_123_CATEGORY
+"Coverage_S1 ","The part of emissions covered in scope 1 for the target. ",Number between 0 and 1 or 0 to 100 --> 70%== 0.7.,,M,TARGET_CARBON_COVERAGE_PCT
+"Coverage_S2 ",The part of emissions covered in scope 2 for the target.,Number between 0 and 1 or 0 to 100 --> 70%== 0.7.,,M,TARGET_CARBON_COVERAGE_PCT
+Coverage_S3,The part of emissions covered in scope 3 for the target. This should be the coverage compared to the whole scope 3 emissions.,Number between 0 and 1 or 0 to 100 --> 70%== 0.7.,,M,TARGET_CARBON_COVERAGE_PCT
+"Reduction ambition ",The emission reduction that is set as an ambition in the target. �,Number between 0 and 1 or 0 to 100 --> 70%== 0.7.,,M,TARGET_CARBON_CHANGE_PCT
+Base year,"Base year of the target. ",numeric/year,,M,CBN_TARGET_BASE_YEAR
+"End year ","End year of the target. ",numeric/year,,M,CBN_TARGET_YEAR
+Start year,"Year the target was announced. �If not specified, it will be assumed the start year is equal to the base year.",numeric/year,,M,
+Base year GHG S1,Total reported GHG emissions for scope 1 for the company at the base year of the target.�,tCO2e,,M,CBN_TARGET_BASE_YEAR_VAL
+Base year GHG S2,Total reported GHG emissions for scope 2 for the company at the base year of the target.��,tCO2e,,M,CBN_TARGET_BASE_YEAR_VAL
+Base year GHG S3,Total reported GHG emissions for scope 3 for the company at the base year of the target.,tCO2e,,M,CBN_TARGET_BASE_YEAR_VAL
+"Achieved reduction ","Part of the reduction ambition of the target that is already achieved by the company. ",Number between 0 and  < 1 or 0  to  < 100 --> 70%== 0.7.,,M,TARGET_CARBON_PROGRESS_PCT
+Fossils fuel exposure,"whether the company is involved in any fossil fuels related activities: extraction, processing, storage and transportation of petroleum products, natural gas, and thermal and metallurgical coal.",Yes/No/Not disclosed,,M,ACTIVE_FF_SECTOR_EXPOSURE
+Total Energy Consumption,"Share of total energy consumption of investee companies from all energy sources ",GWh,,M,TOTL_ERGY_CONSUMP_GWH
+Total Renewable Consumption,"Share of non-renewable energy consumption of investee companies from non-renewable energy sources ",GWh,,M,TOTL_ERGY_CONSUMP_RENEW_GWH
+Renewable Energy Production,"Share of non-renewable energy production  of investee companies from non-renewable energy sources ",GWh,,M,
+Negative Activities Biodiversity Areas,whether Company reports having operations in or near to biodiversity sensitive areas and has been implicated in controversies with severe or very severe adverse impact on the environment,Yes/No/Not disclosed,,M,OPS_PROT_BIODIV_CONTROVS
+Emissions to Water,Tonnes of emissions to water : Total tons of pollutants released to surface waters as a result of companies' operations.,tonnes,,M,WATER_EM_EFF_METRIC_TONS
+Hazardous Waste,Tonnes of hazardous waste and radioactive waste generated by  companies,tonnes,,M,HAZARD_WASTE_METRIC_TON
+Global Violations of UN principles,"whether companies have been involved in violations of the UNGC principles or OECD Guidelines for Multinational enterprise, the UN Guiding principles",Yes/No/Not disclosed. In case of yes: level of severity of the violations/controversies,,M,
+"Lack of processes and  mechanisms to monitor compliance with OECD Guidelines ","whether the companies have in place policies to monitor compliance with or with grievance/ complaints handling mechanisms to address violations of the OECD Guidelines for Multinational Enterprises, the UN Guiding principles",Yes/No/Not disclosed,,M,MECH_UN_GLOBAL_COMPACT
+Gender Pay Gap between female and male employees,The difference between the average gross hourly earnings of male and female employees as a percentage of male gross earnings. Note that reporting on this metric is inconsistent: some companies report on the absolute or uncontrolled pay gap while others control for compensable factors such as role or location.�,numeric/ratio,,M,GENDER_PAY_GAP_RATIO
+Board Gender Diversity,Average ratio of female to male board members in the companies,numeric/pct,,M,FEMALE_DIRECTORS_PCT
+Conventional Weapons,Companies that have an industry tie to conventional weapons.,Yes/No/Not disclosed - True,,M,WEAP_CONVENTIONAL_TIE
+Controversial Weapons Exposure,"whether Company has an industry tie to landmines, cluster munitions, chemical weapons or biological weapons. Note: industry tie includes ownership, manufacture or investment. Landmines do not include related safety products.",Yes/No/Not disclosed,,M,CONTRO_WEAP_CBLMBW_ANYTIE
+GDPNominal,"For sovereigns: nominal GDP of a country. Explicit indication of reported currency. Source: WDI, CIA",,These three are applicable to countries instead of issuers. Necesary to handle portfolios with sovereign bonds and mandatory metric under SFDR. In description section I have added the soruces mentioned by MSCI,M,CARBON_GOVERNMENT_GDP_NOMINAL
+GHG emissions Countries,Total Greenhouse Gas emissions in a country represented in terms of Tons CO2 equivalent. Source: EDGAR,tCO2e,,M,CARBON_GOVERNMENT_GHG
+Countries Social Violations,whether Countries alleged to be involved in human rights violations and abuses can be subject to EU sanctions. Data source: European External Action Service,Yes/No/Not disclosed,,M,GOVERNMENT_EU_SANCTIONS
+Deforestation Policies,whether companies has deforestation policies,Yes/No/Not disclosed,,C,DEFOREST_POL
+Emissions Reduction Policies,"companies without carbon emission reduction initiatives. Linked to the set of points relating to emissions reduction targets. If not reported targets, fields above are blanks",Yes/No/Not disclosed,,M,
+"Lack of anti-corruption and anti-bribery policies ",Company has an anti-corruption and anti-bribery policy consistent with the United Nations Convention against Corruption.,Yes/No/Not disclosed,,S,CORR_BRIB_POLICY_UN
+Lack of a supplier code of conduct,"whether has a  supplier code of conduct.  Includes commitments to eradicate unsafe working conditions, precarious work, child labor and forced labor.",Yes/No/Not disclosed,,S,SUPPLIER_CODE_KEY_PROVISIONS_VALUE
+Human Rights Policies,Company has a human rights policy.,Yes/No/Not disclosed,,S,HUMAN_RGTS_POL
+Water Stress Exposure,whether Company discloses operations in areas of high water stress but lacks mater management policies.,Yes/No/Not disclosed,,C,EXPOSURE_WATER_STRESS_NO_POL_VALUE
+Extreme Water Stress,Company�s operations are exposed to areas where the percentage of total water withdrawn is high or extremely high,Yes/No/Not disclosed,,C,HIGH_EXTREME_WTR_STRESS
+Adult Entertainment,"Companies with an industry tie to adult entertainment, including producer, distributor, retailer, and ownership categories.",True/False,,M,AE_TIE
+Alcohol,"Companies with an industry tie to alcohol, including producer, distributor, retailer, licensor, supplier, and ownership categories.",True/False,,M,ALC_TIE
+Gambling Activities,"Companies that have an industry tie to gambling through the operation, support, licensing or ownership categories.",True/False,,M,GAM_TIE
+Tobacco Producer,"Companies that manufacture tobacco products, such as cigars, blunts, cigarettes, e-cigarettes, inhalers, beedis, kreteks, smokeless tobacco, snuff, snus, dissolvable and chewing tobacco. This also includes companies that grow or process raw tobacco leaves",True/False,,M,TOB_PRODUCER
+Nuclear energy consumption,Energy consumption from nuclear power (GWh),GWh,,M,NUCLEAR_CON_GWH
+Nuclear energy generation,power generation from nuclear sources,GWh,,M,
+Thermal coal generation,Generation Output  from thermal coal,GWh,,M,GENERAT_OUTP_THERMAL_COAL
+Tobacco Retailer Revenue,"The  percent of revenue, or maximum estimated percent, a company has derived from retail sales of tobacco products.",numeric pct,These three metrics can be reported but MSCI also provides estimations in case values are not disclosed. They could beling to section 2 as well. Leaving them here for now,M,TOB_RET_MAX_REV_PCT
+Tobacco Distributor Revenue,"The  percent of revenue, or maximum estimated percent, a company has derived from distribution of tobacco products.",numeric pct,,M,TOB_DIST_MAX_REV_PCT
+Tobacco Supplier Revenue,"The recent-year percent of revenue, or maximum estimated percent, a company has derived from supplying products essential to the tobacco industry.",numeric pct,,M,TOB_SUPP_MAX_REV_PCT

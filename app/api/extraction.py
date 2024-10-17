@@ -12,6 +12,7 @@ from app.database.operations.document_storage import check_document_exists, inse
 from typing import List, Tuple, Optional
 from pathlib import Path
 import json
+import pandas as pd
 
 VALID_FOLDER = "valid"
 INVALID_FOLDER = "invalid"
@@ -94,6 +95,11 @@ async def get_report(company_name: str):
                 "query": query,
                 "response": response_text
             })
+
+            # Convert the list of dictionaries to a pandas DataFrame
+            df = pd.DataFrame(all_responses)
+            # Save the DataFrame to a CSV file
+            df.to_csv('responses.csv', index=False, encoding='utf-8')
 
         # Return all responses as a single output
         return { "results": all_responses }

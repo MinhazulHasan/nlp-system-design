@@ -9,10 +9,23 @@ from app.utilities.helper import save_file, save_file_v2
 from app.utilities.logger import report_logger
 from app.services.pdf_service import get_pdf_content, get_pdf_hash, embed_pdf, embed_pdf_v2
 from app.database.operations.document_storage import check_document_exists, insert_document
-from typing import List, Tuple, Optional
+from typing import Tuple, Optional
 from pathlib import Path
 import json
 import pandas as pd
+from langchain_core.output_parsers import StrOutputParser
+from langchain_openai import ChatOpenAI
+from app.config.settings import config
+
+
+model = ChatOpenAI(
+    model="gpt-4o",
+    temperature=0,
+    max_tokens=None,
+    timeout=None,
+    max_retries=2,
+    api_key=config.OPENAI_API_KEY
+)
 
 VALID_FOLDER = "valid"
 INVALID_FOLDER = "invalid"
@@ -103,6 +116,49 @@ async def get_report(company_name: str):
 
         # Return all responses as a single output
         return { "results": all_responses }
+    
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+
+
+
+@extraction_router.post('/get_report_batch')
+async def get_report_batch(company_name: str):
+    try:
+        # Load queries from JSON
+        with open('output.json', 'r') as json_file:
+            all_query = json.load(json_file)
+
+        all_data = []
+        output_parser = StrOutputParser()
+        prompt = ChatPromptTemplate.from_template(get_prompt_for_specific_field())
+
+        for record in all_query:
+            query = f"{record.get('Data Field', '')} of {company_name}"
+            # Perform the Chroma DB similarity search for the specific query
+            context = await get_similar_documents_v2(company_name, query)
+            query_description = record.get('Description', '')
+            expected_values = record.get('Expected values', 'Not Defined')
+            all_data.append({
+                "query": query,
+                "context": context,
+                "query_description": query_description,
+                "expected_values": expected_values
+            })
+        
+        chain = prompt | model  | output_parser
+        ans=chain.batch(all_data)
+
+        final_response = []
+        for i in range(len(all_query)):
+            final_response.append({
+                "query": f"{all_query[i].get('Data Field', '')} of {company_name}",
+                "response": ans[i]
+            })
+            
+        return { "message": final_response }
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

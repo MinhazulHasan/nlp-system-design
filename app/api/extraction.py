@@ -151,14 +151,19 @@ async def get_report_batch(company_name: str):
         chain = prompt | model  | output_parser
         ans=chain.batch(all_data)
 
-        final_response = []
+        all_responses = []
         for i in range(len(all_query)):
-            final_response.append({
+            all_responses.append({
                 "query": f"{all_query[i].get('Data Field', '')} of {company_name}",
                 "response": ans[i]
             })
+
+        # Convert the list of dictionaries to a pandas DataFrame
+        df = pd.DataFrame(all_responses)
+        # Save the DataFrame to a CSV file
+        df.to_csv('responses.csv', index=False, encoding='utf-8')
             
-        return { "message": final_response }
+        return { "message": all_responses }
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

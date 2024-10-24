@@ -83,7 +83,7 @@ def save_file(content: Union[bytes, str], filename: str, company: str, is_valid:
 
 
 def create_folder_structure_v2(company: str) -> None:
-    base_path = Path("collected_documents_v2") / company
+    base_path = Path("collected_documents") / company
     for folder in [VALID_FOLDER, INVALID_FOLDER]:
         folder_path = base_path / folder
         folder_path.mkdir(parents=True, exist_ok=True)
@@ -110,7 +110,7 @@ async def download_pdf_v2(url):
 async def save_file_v2(company_name: str, pdf_name: str, pdf_link: str, is_valid: bool) -> None:
     create_folder_structure_v2(company_name)
     validation_status = VALID_FOLDER if is_valid else INVALID_FOLDER
-    file_path = Path("collected_documents_v2") / company_name / validation_status / pdf_name
+    file_path = Path("collected_documents") / company_name / validation_status / pdf_name
     # Check if the file already exists
     if file_path.exists():
         report_logger.info(f"File {file_path} already exists. Skipping download.")

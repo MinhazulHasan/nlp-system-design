@@ -1,0 +1,65 @@
+{
+    "Apple Inc": {
+        "precision": 0.9,
+        "recall": 1.0,
+        "f1_score": 0.9473684210526315,
+        "accuracy": 0.9473684210526315,
+        "total_documents": 19,
+        "valid_documents": 9,
+        "invalid_documents": 10
+    },
+    "JPMorgan Chase & Co": {
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1_score": 0.9333333333333333,
+        "accuracy": 0.875,
+        "total_documents": 16,
+        "valid_documents": 16,
+        "invalid_documents": 0
+    },
+    "Citigroup Inc": {
+        "precision": 1.0,
+        "recall": 0.8333333333333334,
+        "f1_score": 0.9090909090909091,
+        "accuracy": 0.8333333333333334,
+        "total_documents": 18,
+        "valid_documents": 18,
+        "invalid_documents": 0
+    },
+    "Wells Fargo & Company": {
+        "precision": 1.0,
+        "recall": 0.7692307692307693,
+        "f1_score": 0.8695652173913043,
+        "accuracy": 0.8125,
+        "total_documents": 16,
+        "valid_documents": 13,
+        "invalid_documents": 3
+    },
+    "The Goldman Sachs Group": {
+        "precision": 1.0,
+        "recall": 0.9411764705882353,
+        "f1_score": 0.9696969696969697,
+        "accuracy": 0.9411764705882353,
+        "total_documents": 17,
+        "valid_documents": 17,
+        "invalid_documents": 0
+    },
+    "Morgan Stanley": {
+        "precision": 1.0,
+        "recall": 0.9333333333333333,
+        "f1_score": 0.9655172413793104,
+        "accuracy": 0.9411764705882353,
+        "total_documents": 17,
+        "valid_documents": 15,
+        "invalid_documents": 2
+    },
+    "Alphabet Inc": {
+        "precision": 0.8181818181818182,
+        "recall": 1.0,
+        "f1_score": 0.9,
+        "accuracy": 0.8947368421052632,
+        "total_documents": 19,
+        "valid_documents": 9,
+        "invalid_documents": 10
+    }
+}

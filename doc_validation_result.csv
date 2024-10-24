@@ -1,0 +1,123 @@
+company_name,pdf_name,is_valid_actual,is_valid_predicted
+Apple Inc,Environmental Progress Report - Apple.pdf,TRUE,TRUE
+Apple Inc,"Apple Inc. on Form 10-K for the fiscal year ended September 30, 2023.pdf",TRUE,TRUE
+Apple Inc,Environmental Progress Report – Apple.pdf,TRUE,TRUE
+Apple Inc,Apple Inc..pdf,TRUE,TRUE
+Apple Inc,Apple Inc..pdf,TRUE,TRUE
+Apple Inc,Apple Annual Report 2020 Form 10-K (NASDAQ_AAPL) Published ....pdf,TRUE,TRUE
+Apple Inc,APPLE INC.pdf,TRUE,TRUE
+Apple Inc,Financial Analysis of Apple Inc. Based on 2021 Apple Annual Report.pdf,TRUE,TRUE
+Apple Inc,Analysis on Unusual Current Ratio of Apple Based on Annual ....pdf,FALSE,FALSE
+Apple Inc,Annual report_ APPLE INC.pdf,TRUE,TRUE
+Apple Inc,2012-2013 Annual Report.pdf,FALSE,FALSE
+Apple Inc,TMCF-2015 Annual Report.indd.pdf,FALSE,FALSE
+Apple Inc,INTERDIGITAL 2007 ANNUAL REPORT.pdf,FALSE,FALSE
+Apple Inc,IEDA FY2020 ANNUAL REPORT BY COMPANY.pdf,FALSE,TRUE
+Apple Inc,printmgr file.pdf,FALSE,FALSE
+Apple Inc,Year 4 Annual Report_ Massachusetts Small MS4 General Permit.pdf,FALSE,FALSE
+Apple Inc,Annual Report of City of Reno Tourism Improvement Districts (TIDs ....pdf,FALSE,FALSE
+Apple Inc,Annual Report FY23.pdf,FALSE,FALSE
+Apple Inc,SEMI-ANNUAL REPORT.pdf,FALSE,FALSE
+JPMorgan Chase & Co,Powering Growth with Curiosity and Heart Annual Report 2023.pdf,TRUE,TRUE
+JPMorgan Chase & Co,2021 Environmental Social & Governance Report.pdf,TRUE,TRUE
+JPMorgan Chase & Co,2022 Environmental Social Governance Report.pdf,TRUE,TRUE
+JPMorgan Chase & Co,JPMorgan Chase 2016 Annual Report.pdf,TRUE,TRUE
+JPMorgan Chase & Co,2023 Environmental Social Governance Report.pdf,TRUE,TRUE
+JPMorgan Chase & Co,JPMorgan Chase & Co..pdf,TRUE,TRUE
+JPMorgan Chase & Co,Annual Report 2022 _ JPMorgan Chase.pdf,TRUE,TRUE
+JPMorgan Chase & Co,annual report 2008 of j.p. morgan ag.pdf,TRUE,TRUE
+JPMorgan Chase & Co,JP Morgan Asset Management - 2024 Global TCFD Report.pdf,TRUE,FALSE
+JPMorgan Chase & Co,ANNUAL REPORT 2022 OF J.P. MORGAN SE.pdf,TRUE,TRUE
+JPMorgan Chase & Co,1 J.P. Morgan Structured Products B.V. (incorporated with limited ....pdf,TRUE,TRUE
+JPMorgan Chase & Co,ANNUAL REPORT JPMORGAN CHASE & CO..pdf,TRUE,TRUE
+JPMorgan Chase & Co,"jpmorgan chase bank, national association.pdf",TRUE,TRUE
+JPMorgan Chase & Co,PD - PublicDocument.pdf,TRUE,TRUE
+JPMorgan Chase & Co,"J.P. Morgan Structured Products B.V. JPMorgan Chase Bank, N.A. ....pdf",TRUE,TRUE
+JPMorgan Chase & Co,JPMorgan Chase & Co. Resolution Plan Public Filing.pdf,TRUE,FALSE
+Citigroup Inc,"2022 Environmental, Social and Governance Report _ Citigroup.pdf",TRUE,TRUE
+Citigroup Inc,Citigroup Annual Report 2023 Form 10-K (NYSE_C) Published ....pdf,TRUE,TRUE
+Citigroup Inc,2023 Annual Report _ Citigroup.pdf,TRUE,TRUE
+Citigroup Inc,CITIGROUP GLOBAL MARKETS HOLDINGS INC. ANNUAL ....pdf,TRUE,TRUE
+Citigroup Inc,CITIGROUP'S 2007 ANNUAL REPORT ON FORM 10-K.pdf,TRUE,TRUE
+Citigroup Inc,"Citi 2021 Environmental, Social & Governance Report.pdf",TRUE,TRUE
+Citigroup Inc,CITIGROUP'S 2007 ANNUAL REPORT ON FORM 10-K.pdf,TRUE,TRUE
+Citigroup Inc,2020 ANNUAL REPORT.pdf,TRUE,TRUE
+Citigroup Inc,2005 ANNUAL REPORT.pdf,TRUE,TRUE
+Citigroup Inc,2018 ANNUAL REPORT.pdf,TRUE,TRUE
+Citigroup Inc,"Citigroup Inc. 2023 Resolution Plan Public Section July 1, 2023.pdf",TRUE,FALSE
+Citigroup Inc,Citigroup Inc. 2022 Notice of Annual Meeting and Proxy Statement.pdf,TRUE,TRUE
+Citigroup Inc,CITIGROUP GLOBAL MARKETS FUNDING LUXEMBOURG S.C.A. ....pdf,TRUE,TRUE
+Citigroup Inc,Citigroup Inc. 2023 Notice of Annual Meeting and Proxy Statement.pdf,TRUE,TRUE
+Citigroup Inc,BASE PROSPECTUS SUPPLEMENT (No.4) dated 12 May 2010 ....pdf,TRUE,FALSE
+Citigroup Inc,2019 ANNUAL REPORT.pdf,TRUE,TRUE
+Citigroup Inc,Citi Annual Report 2009.pdf,TRUE,TRUE
+Citigroup Inc,CITIGROUP INC. RATES BASE PROSPECTUS SUPPLEMENT (No ....pdf,TRUE,FALSE
+Wells Fargo & Company,"Environmental, Social, and Governance (ESG) Report _ Wells Fargo.pdf",TRUE,TRUE
+Wells Fargo & Company,Wells Fargo & Company 2020 Annual Report.pdf,TRUE,TRUE
+Wells Fargo & Company,Wells Fargo Sustainability & Governance Report Published August ....pdf,TRUE,TRUE
+Wells Fargo & Company,Wells Fargo & Company 2018 Annual Report.pdf,TRUE,TRUE
+Wells Fargo & Company,2023 Annual Report.pdf,TRUE,TRUE
+Wells Fargo & Company,Wells Fargo & Company 2016 Annual Report.pdf,TRUE,TRUE
+Wells Fargo & Company,2022-annual-report.pdf.pdf,TRUE,TRUE
+Wells Fargo & Company,Wells Fargo & Company Annual Report.pdf,TRUE,TRUE
+Wells Fargo & Company,2023 Wells Fargo & Company 165(d) Resolution Plan.pdf,TRUE,FALSE
+Wells Fargo & Company,"A-1 EXHIBIT A—STATEMENT OF FACTS Wells Fargo Bank, N.A. ....pdf",FALSE,FALSE
+Wells Fargo & Company,The “King of Cross-Sell” and the Race to Eight.pdf,TRUE,TRUE
+Wells Fargo & Company,"Wells Fargo & Company Wells Fargo Bank, N.A. Resolution Plan ....pdf",TRUE,FALSE
+Wells Fargo & Company,Wells Fargo Annual Report 2005 Form 10-K (NYSE_WFC) Published ....pdf,TRUE,TRUE
+Wells Fargo & Company,Parnassus Investments and Wells Fargo & Co._ Balancing Morals ....pdf,TRUE,FALSE
+Wells Fargo & Company,"May 26, 2021 Testimony of Charles W. Scharf Chief Executive ....pdf",FALSE,FALSE
+Wells Fargo & Company,Annual report.pdf,FALSE,FALSE
+The Goldman Sachs Group,2023 Sustainability Report _ Goldman Sachs.pdf,TRUE,TRUE
+The Goldman Sachs Group,"Goldman Sachs Funds, Plc Semi-Annual Report.pdf",TRUE,TRUE
+The Goldman Sachs Group,"The Goldman Sachs Group, Inc. Annual Report 2022 PDF.pdf",TRUE,TRUE
+The Goldman Sachs Group,"The Goldman Sachs Group, Inc..pdf",TRUE,TRUE
+The Goldman Sachs Group,Annual Report 2021 _ Goldman Sachs.pdf,TRUE,TRUE
+The Goldman Sachs Group,ANNUAL REPORT FY 2023.pdf,TRUE,TRUE
+The Goldman Sachs Group,"The Goldman Sachs Group, Inc. Annual Report 2020 [PDF].pdf",TRUE,TRUE
+The Goldman Sachs Group,"The Goldman Sachs Group, Inc..pdf",TRUE,TRUE
+The Goldman Sachs Group,2017 Annual Report _ Goldman Sachs.pdf,TRUE,TRUE
+The Goldman Sachs Group,GOLDMAN SACHS GROUP INC Form 11-K Annual Report Filed ....pdf,TRUE,TRUE
+The Goldman Sachs Group,2019 Annual Report.pdf,TRUE,TRUE
+The Goldman Sachs Group,Goldman Sachs 2002 Annual Report.pdf,TRUE,TRUE
+The Goldman Sachs Group,Annual Report 2018 _ Goldman Sachs.pdf,TRUE,TRUE
+The Goldman Sachs Group,Goldman Sachs 2013 Annual Report.pdf,TRUE,TRUE
+The Goldman Sachs Group,"The Goldman Sachs Group, Inc. _ 200 West Street _ New York, New ....pdf",TRUE,TRUE
+The Goldman Sachs Group,2015 ANNUAL REPORT _ Goldman Sachs.pdf,TRUE,TRUE
+The Goldman Sachs Group,"THE GOLDMAN SACHS GROUP, INC. 2019 RESOLUTION PLAN.pdf",TRUE,FALSE
+Morgan Stanley,2023 ESG Report _ Morgan Stanley.pdf,TRUE,TRUE
+Morgan Stanley,2022 ESG Report by Morgan Stanley.pdf,TRUE,TRUE
+Morgan Stanley,Morgan Stanley Reports Fourth Quarter and Full Year 2015_.pdf,TRUE,TRUE
+Morgan Stanley,Morgan Stanley 2022 Form 10-K.pdf,TRUE,TRUE
+Morgan Stanley,Morgan Stanley Annual Report 2004.pdf,TRUE,TRUE
+Morgan Stanley,Annual Report 2022 _ Morgan Stanley Europe SE.pdf,TRUE,TRUE
+Morgan Stanley,Diversity and Inclusion Annual Report _ Morgan Stanley.pdf,TRUE,TRUE
+Morgan Stanley,Morgan Stanley Fourth Quarter and Full Year 2023 Earnings Results.pdf,TRUE,TRUE
+Morgan Stanley,MSC002 for pdf.pdf,TRUE,TRUE
+Morgan Stanley,Group Annual Report 2023 _ Morgan Stanley Europe Holding SE.pdf,TRUE,TRUE
+Morgan Stanley,"Morgan Stanley Resolution Plan Public Section July 1, 2023.pdf",TRUE,FALSE
+Morgan Stanley,UNITED STATES SECURITIES AND EXCHANGE COMMISSION ....pdf,TRUE,TRUE
+Morgan Stanley,MORGAN STANLEY BANK ASIA LIMITED Reports and financial ....pdf,TRUE,TRUE
+Morgan Stanley,2021 Sustainability Report _ Morgan Stanley.pdf,TRUE,TRUE
+Morgan Stanley,ANNUAL REPORT.pdf,FALSE,FALSE
+Morgan Stanley,printmgr file.pdf,TRUE,TRUE
+Morgan Stanley,Morgan Stanley Private Bank - CRA Strategic Plan.pdf,FALSE,FALSE
+Alphabet Inc,2022 Alphabet Annual Report (PDF).pdf,TRUE,TRUE
+Alphabet Inc,Alphabet Annual Report 2017 Form 10-K (NASDAQ_GOOG ....pdf,TRUE,TRUE
+Alphabet Inc,goog023-alphabet-2023-annual-report-web-1.pdf.pdf,TRUE,TRUE
+Alphabet Inc,Dodge & Cox US Stock Fund 2023 Annual Report.pdf,FALSE,FALSE
+Alphabet Inc,Untitled.pdf,TRUE,TRUE
+Alphabet Inc,Alphabet 2020.pdf,TRUE,TRUE
+Alphabet Inc,EQUAL EMPLOYMENT OPPORTUNITY SECTION C - TEST FOR ....pdf,TRUE,TRUE
+Alphabet Inc,Alphabet Announces Fourth Quarter and Fiscal Year 2022 Results.pdf,TRUE,TRUE
+Alphabet Inc,SPDR® S&P 500® ETF Trust.pdf,FALSE,FALSE
+Alphabet Inc,Alphabet Announces Fourth Quarter and Fiscal Year 2023 Results.pdf,TRUE,TRUE
+Alphabet Inc,Spotify Exhibits _Redactions_ _2_.docx.pdf,FALSE,FALSE
+Alphabet Inc,Alph ab e t 2 0 15 A n n u a l R e p o rt.pdf,TRUE,TRUE
+Alphabet Inc,2013 Annual Report.pdf,FALSE,FALSE
+Alphabet Inc,"annual report - december 31, 2022.pdf",FALSE,TRUE
+Alphabet Inc,ANNUAL REPORT 2018.pdf,FALSE,FALSE
+Alphabet Inc,05.31.2024 - Jensen - Global Quality Growth - Annual Report.pdf,FALSE,FALSE
+Alphabet Inc,Annual Report.pdf,FALSE,TRUE
+Alphabet Inc,"ANNUAL REPORT — April 30, 2024 VULCAN VALUE PARTNERS ....pdf",FALSE,FALSE
+Alphabet Inc,DARP Semi-Annual Report January 31 ... - Grizzle Growth ETF Ticker.pdf,FALSE,FALSE

@@ -12,9 +12,5 @@ chroma
 /modified_chunks.txt
 /chroma_data.txt
 /logs
-/collated_documents
-/collated_documents/*
-/collated_documents/*/*
-/collected_documents_v2
-/collected_documents_v2/*
-/collected_documents_v2/*/*
+/collected_documents/
+/collected_documents/*

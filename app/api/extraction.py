@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from app.services.search_service import fetch_pdf_links
 from app.services.search_service_v2 import fetch_pdf_links_v2
+from app.services.search_service_v3 import fetch_pdf_links_v3
 from app.services.embedding_service import get_similar_documents, get_similar_documents_v2
 from langchain.prompts import ChatPromptTemplate
 from app.services.openai_service import openai_response
@@ -16,6 +17,8 @@ import pandas as pd
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 from app.config.settings import config
+from app.services.report_generator import ReportGenerator
+from app.schemas.response_schemas import ReportResponse
 
 
 model = ChatOpenAI(
@@ -54,9 +57,37 @@ async def document_check_and_DB_insertion(info: Tuple[str, str, str, Optional[st
 
 
 
-@extraction_router.post('/validate_using_snippet', status_code=201)
-async def validate_using_snippet(company_name: str):
+# @extraction_router.post('/yearwise_validation', status_code=201)
+# async def yearwise_validation(company_name: str):
+#     try:
+#         pdf_info = await fetch_pdf_links_v3(company_name, 2019, 2023, 2)
+#         for info in pdf_info:
+#             company_name, pdf_name, pdf_link, pdf_date, snippet = info
+#             file_hash = await document_check_and_DB_insertion(info)
+#             if file_hash:
+#                 query = f"Is the Document valid for the company: '{company_name}'"
+#                 prompt_template = ChatPromptTemplate.from_template(get_prompt_for_snippet())
+#                 prompt = prompt_template.format(query=query, pdf_name=pdf_name, pdf_link={pdf_link}, snippet=snippet)
+#                 response_text = await openai_response(prompt)
+#                 if "YES" in response_text.upper():
+#                     full_path = Path("collected_documents") / company_name / VALID_FOLDER / pdf_name
+#                     await save_file_v2(company_name, pdf_name, pdf_link, True)
+#                     await embed_pdf_v2(full_path, file_hash, company_name)
+#                     report_logger.info(f"Document {pdf_name} is valid and saved to the valid folder")
+#                 else:
+#                     await save_file_v2(company_name, pdf_name, pdf_link, False)
+#                     report_logger.info(f"Document {pdf_name} is invalid and saved to the invalid folder")
+#         return { "message": pdf_info }
+    
+#     except Exception as e:
+#         raise HTTPException(status_code=500, detail=str(e))
+
+
+
+@extraction_router.post('/extract_and_validate', status_code=201)
+async def extract_and_validate(company_name: str):
     try:
+        df = pd.DataFrame()
         pdf_info = await fetch_pdf_links_v2(company_name, 2)
         for info in pdf_info:
             company_name, pdf_name, pdf_link, pdf_date, snippet = info
@@ -67,13 +98,19 @@ async def validate_using_snippet(company_name: str):
                 prompt = prompt_template.format(query=query, pdf_name=pdf_name, pdf_link={pdf_link}, snippet=snippet)
                 response_text = await openai_response(prompt)
                 if "YES" in response_text.upper():
-                    full_path = Path("collected_documents_v2") / company_name / VALID_FOLDER / pdf_name
+                    full_path = Path("collected_documents") / company_name / VALID_FOLDER / pdf_name
+                    new_row = pd.DataFrame([{"company_name": company_name, "pdf_name": pdf_name, "is_valid": True}])
+                    df = pd.concat([df, new_row], ignore_index=True)
                     await save_file_v2(company_name, pdf_name, pdf_link, True)
                     await embed_pdf_v2(full_path, file_hash, company_name)
                     report_logger.info(f"Document {pdf_name} is valid and saved to the valid folder")
                 else:
+                    new_row = pd.DataFrame([{"company_name": company_name, "pdf_name": pdf_name, "is_valid": False}])
+                    df = pd.concat([df, new_row], ignore_index=True)
                     await save_file_v2(company_name, pdf_name, pdf_link, False)
                     report_logger.info(f"Document {pdf_name} is invalid and saved to the invalid folder")
+        
+        df.to_csv('doc_validation_result.csv', index=False, encoding='utf-8')
         return { "message": pdf_info }
     
     except Exception as e:
@@ -122,8 +159,6 @@ async def get_report(company_name: str):
 
 
 
-
-
 @extraction_router.post('/get_report_batch')
 async def get_report_batch(company_name: str):
     try:
@@ -165,5 +200,16 @@ async def get_report_batch(company_name: str):
             
         return { "message": all_responses }
     
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+
+@extraction_router.get('/generate_document_validation_report')
+async def generate_document_validation_report():
+    try:
+        generator = ReportGenerator()
+        metrics, report_path = generator.generate_report()
+        return ReportResponse(metrics=metrics, report_path=report_path)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
